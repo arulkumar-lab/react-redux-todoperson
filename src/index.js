@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import "../styles/main.less";
+import '../styles/main.less';
+import { Provider } from 'react-redux';
+import store from './store';
+import Application from './Application';
 
-class App extends React.Component {
-    render () {
-        return <h1>Hello World from React boilerplate</h1>;
-    }
-}
-
-export default App;
-
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+    <Provider store={store}>
+        <Application />
+    </Provider>,
+    document.getElementById('root')
+);
